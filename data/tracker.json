@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "created_at": "2025-07-16",
+        "information": [
+            {
+                "title": "add_new_day",
+                "description": "Add new day option was added with validation and connction do json.",
+                "time_learning": 60
+            },
+            {
+                "title": "save to file json",
+                "description": "Configured save to file json so it takes input from add new day and saves it.",
+                "time_learning": 15
+            },
+            {
+                "title": "class tracker",
+                "description": "Class tracker and function add.information was added to the program.",
+                "time_learning": 30
+            }
+        ]
+    }
+]
