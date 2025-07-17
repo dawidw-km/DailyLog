@@ -1,6 +1,7 @@
 import os
 import sys
-from core.services.learning_tracker import show_menu, add_day
+from core.services.learning_tracker import show_menu, add_day, edit_day
+from utils.storage import save_tracker_to_file, load_tracker_from_file
 
 sys.path.append(os.path.abspath("core"))
 
@@ -14,11 +15,11 @@ if __name__ == "__main__":
         choice = input("Choose option: ").strip().lower()
         if choice == "1":
             add_day()
+        elif choice == "2":
+            edit_day()
         elif choice == "q":
             print("Bye!")
             break
-        else:
-            print("Option not implemented yet.")
 
 
 
