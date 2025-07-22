@@ -77,12 +77,40 @@ def add_day():
     trackers.append(tracker)
     save_tracker_to_file(trackers)
 
-def edit_day():
+## Edit the last added day to the log.
+def edit_last_day():
+    title_items = []
+    description_items = []
+    time_learning_list = []
+
     while True:
         latest_day = max(trackers, key=lambda t: t.id)
         print(latest_day)
-        quit = input("Do you want to quit?\n Type q").lower()
-        if quit == "q":
+
+        edit_or_quit = input("Do you want to edit or quit?\n Type 'edit' or 'q'").lower()
+        if edit_or_quit == "edit":
+            trackers.remove(latest_day)
+
+            while True:
+                title = validated_information_title()
+                title_items.append(title)
+                description = validated_information_description()
+                description_items.append(description)
+                time_learning = validated_time_spent()
+                time_learning_list.append(time_learning)
+                ask_to_continue = input("Do you want to add another one?\nType y/n:").strip().lower()
+                if ask_to_continue == "y":
+                    continue
+                elif ask_to_continue == "n":
+                    break
+
+            tracker = Tracker()
+            for title, description, time_learning in zip(title_items, description_items, time_learning_list):
+                tracker.add_information(title, description, time_learning)
+            trackers.append(tracker)
+            save_tracker_to_file(trackers)
+
+        elif edit_or_quit == "q":
             break
 
 def show_latest_day():

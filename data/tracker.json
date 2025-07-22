@@ -1,0 +1,24 @@
+[
+    {
+        "id": 2,
+        "created_at": "2025-07-22",
+        "information": [
+            {
+                "title": "z",
+                "description": "z",
+                "time_learning": 2
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "created_at": "2025-07-22",
+        "information": [
+            {
+                "title": "c",
+                "description": "c",
+                "time_learning": 4
+            }
+        ]
+    }
+]
