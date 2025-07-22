@@ -4,7 +4,7 @@ from utils.storage import save_tracker_to_file, load_tracker_from_file
 import sys
 sys.path.append("~/VSC/Learning_tracker/core/models")
 
-trackers = load_tracker_from_file()
+trackers = load_tracker_from_file() if load_tracker_from_file is not None else []
 
 ##Shows menu
 def show_menu():
@@ -81,6 +81,14 @@ def edit_day():
     while True:
         latest_day = max(trackers, key=lambda t: t.id)
         print(latest_day)
-        x = input("q")
-        if x == 'q':
+        quit = input("Do you want to quit?\n Type q").lower()
+        if quit == "q":
+            break
+
+def show_latest_day():
+    while True:
+        latest_day = max(trackers, key=lambda t: t.id)
+        print(latest_day)
+        quit = input("Do you want to quit?\n Type q").lower()
+        if quit == "q":
             break
